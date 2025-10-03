@@ -1,0 +1,8 @@
+{
+  "ansible_net_system": "ios",
+  "ansible_net_version": "17.03.06",
+  "ansible_net_stacked_models": ["C9200L-48T-4G"],
+  "ansible_net_iostype": "IOS-XE",
+  "ansible_net_hostname": "Sw_SEATLAN_2PISO_2",
+  "ip": "10.160.1.15"
+}

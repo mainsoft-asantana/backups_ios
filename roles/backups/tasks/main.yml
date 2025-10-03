@@ -1,0 +1,16 @@
+---
+# tasks file for roles/backups
+- name: get information
+  import_tasks: facts.yml
+
+- name: create directory
+  import_tasks: utils.yml
+  delegate_to: localhost
+
+- name: processe
+  import_tasks: backups.yml
+
+- name: Proccess Python
+  ansible.builtin.shell: 'python3 {{ role_path }}/files/process.py'
+  delegate_to: localhost
+  run_once: true

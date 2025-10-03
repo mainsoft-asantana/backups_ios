@@ -1,0 +1,31 @@
+---
+- name: Crear archivo vars.py
+  file:
+    path: "{{ role_path }}/files/vars.py"
+    state: touch
+    mode: '0600'
+  changed_when: false
+
+# - name: Agregar configuración de DB
+#   lineinfile:
+#     path: "{{ role_path }}/files/vars.py"
+#     line: "{{ item }}"
+#     create: yes
+#   loop:
+#     - "HOST='{{ db_host }}'"
+#     - "PORT='{{ db_port }}'"
+#     - "DATABASE='{{ db_name }}'"
+#     - "USER='{{ db_user }}'"
+#     - "PASSWORD='{{ db_password }}'"
+#   no_log: true
+
+- name: clean backups
+  ansible.builtin.file:
+    path: "{{ role_path }}/files/backups"
+    state: absent
+
+- name: create backups
+  ansible.builtin.file:
+    path: "{{ role_path }}/files/backups"
+    state: directory
+    mode: '0755' # Permisos para el directorio

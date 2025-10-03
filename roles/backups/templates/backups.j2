@@ -1,0 +1,10 @@
+{% if output.results | length > 0 %}
+{% for list in output.results %}
+################################### Commands: {{ list.item }} ###################################
+
+{% for item in list.stdout %}
+{{ item }}
+{% endfor %}
+
+{% endfor %}
+{% endif %}

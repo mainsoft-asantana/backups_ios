@@ -1,0 +1,6 @@
+---
+- name: Execute clean logs
+  hosts: ios_ntw
+  gather_facts: false
+  roles:
+    - role: roles/backups

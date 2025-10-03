@@ -1,0 +1,8 @@
+{
+  "ansible_net_system": "{{ ios_facts.ansible_facts.ansible_net_system | default('') }}",
+  "ansible_net_version": "{{ ios_facts.ansible_facts.ansible_net_version | default('') }}",
+  "ansible_net_stacked_models": {{ ios_facts.ansible_facts.ansible_net_stacked_models | default([]) | to_json }},
+  "ansible_net_iostype": "{{ ios_facts.ansible_facts.ansible_net_iostype | default('') }}",
+  "ansible_net_hostname": "{{ ios_facts.ansible_facts.ansible_net_hostname | default('') }}",
+  "ip": "{{ ansible_host | default('N/A') }}"
+}
