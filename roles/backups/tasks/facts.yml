@@ -1,13 +1,5 @@
 ---
 
-- name: Process output and generate JSON
-  template:
-    src: templates/bdd_vars.j2
-    dest: '{{ role_path }}/files/scripts/vars.py'
-    mode: '0644'
-  delegate_to: localhost
-  run_once: true
-
 - name: Gather only the config and default facts
   cisco.ios.ios_facts:
     gather_subset:
